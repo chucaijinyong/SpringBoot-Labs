@@ -28,12 +28,12 @@ public class LockTest {
             @Override
             public void run() {
                 // 加锁以后 10 秒钟自动解锁
-                // 无需调用 unlock 方法手动解锁
+                // 无需调用 unlock 方法手动解锁,因为你设置了过期时间
                 final RLock lock = redissonClient.getLock(LOCK_KEY);
                 lock.lock(10, TimeUnit.SECONDS);
             }
         }).start();
-        // 简单 sleep 1 秒，保证线程 A 成功持有锁
+        // 简单 sleep 1 秒，保证线程 A 成功持有锁，毫秒为单位
         Thread.sleep(1000L);
 
         // 尝试加锁，最多等待 100 秒，上锁以后 10 秒自动解锁

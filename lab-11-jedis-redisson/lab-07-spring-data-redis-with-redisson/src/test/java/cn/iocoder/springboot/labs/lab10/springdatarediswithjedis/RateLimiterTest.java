@@ -29,7 +29,7 @@ public class RateLimiterTest {
 //        rateLimiter.trySetRate(RateType.PER_CLIENT, 50, 1, RateIntervalUnit.MINUTES);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.println(String.format("%s：获得锁结果(%s)", simpleDateFormat.format(new Date()),
                     rateLimiter.tryAcquire()));
             Thread.sleep(250L);
