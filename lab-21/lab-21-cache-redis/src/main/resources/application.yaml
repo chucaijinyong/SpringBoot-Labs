@@ -1,13 +1,13 @@
 spring:
   # datasource 数据源配置内容
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/lab-21-cache-demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/lab-21-cache-demo??useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password:
+    password: root
   # 对应 RedisProperties 类
   redis:
-    host: 127.0.0.1
+    host: 192.168.56.10
     port: 6379
     password: # Redis 服务器密码，默认为空。生产中，一定要设置 Redis 密码！
     database: 0 # Redis 数据库号，默认为 0 。

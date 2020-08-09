@@ -33,7 +33,7 @@ public class UserMapperTest {
     @Test
     public void testSelectById() {
         // 这里，胖友事先插入一条 id = 1 的记录。
-        Integer id = 1;
+        Integer id = 9;
 
         // 查询 id = 1 的记录
         UserDO user = userMapper.selectById(id);

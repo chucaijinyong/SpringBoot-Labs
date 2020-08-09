@@ -4,12 +4,12 @@ spring:
       url: jdbc:mysql://127.0.0.1:3306/lab-28-quartz-jdbc-user?useSSL=false&useUnicode=true&characterEncoding=UTF-8
       driver-class-name: com.mysql.jdbc.Driver
       username: root
-      password:
+    password: root
     quartz:
       url: jdbc:mysql://127.0.0.1:3306/lab-28-quartz-jdbc-quartz?useSSL=false&useUnicode=true&characterEncoding=UTF-8
       driver-class-name: com.mysql.jdbc.Driver
       username: root
-      password:
+    password: root
 
   # Quartz 的配置，对应 QuartzProperties 配置类
   quartz:

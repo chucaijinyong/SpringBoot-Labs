@@ -2,7 +2,7 @@ spring:
   data:
     # MongoDB 配置项，对应 MongoProperties 类
     mongodb:
-      host: 127.0.0.1
+      host: 192.168.56.10
       port: 27017
       database: yourdatabase
       username: test01

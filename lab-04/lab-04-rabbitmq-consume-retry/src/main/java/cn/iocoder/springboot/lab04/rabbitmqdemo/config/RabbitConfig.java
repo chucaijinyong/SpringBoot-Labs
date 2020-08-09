@@ -19,10 +19,18 @@ public class RabbitConfig {
             return QueueBuilder.durable(Demo07Message.QUEUE) // durable: 是否持久化
                     .exclusive() // exclusive: 是否排它
                     .autoDelete() // autoDelete: 是否自动删除
+//            第一点，创建的正常 Queue 额外设置了，当消息成为死信时，RabbitMQ 自动转发到 Exchange 为 Demo07Message.EXCHANGE，
+//            RoutingKey 为 Demo07Message.DEAD_ROUTING_KEY 的死信队列中。
                     .deadLetterExchange(Demo07Message.EXCHANGE)
                     .deadLetterRoutingKey(Demo07Message.DEAD_ROUTING_KEY)
                     .build();
         }
+
+
+//        第二点，通过 #demo07DeadQueue() 方法来创建死信队列的 Queue ，通过 #demo07DeadBinding() 方法来创建死信队列的 Binding 。
+//        😈 因为我们重用了 Exchange 为 Demo07Message.EXCHANGE ，所以无需创建。当然，胖友也可以根据自己的需要，
+//        创建死信队列的 Exchange 。
+
 
         // 创建 Dead Queue
         @Bean

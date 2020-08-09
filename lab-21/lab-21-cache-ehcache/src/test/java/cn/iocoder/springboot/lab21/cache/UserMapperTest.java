@@ -39,6 +39,7 @@ public class UserMapperTest {
         UserDO user = userMapper.selectById(id);
         System.out.println("user：" + user);
         // 判断缓存中，是不是存在
+        System.out.println(cacheManager.getCache(CACHE_NAME_USER).get(user.getId(), UserDO.class));
         Assert.assertNotNull("缓存为空", cacheManager.getCache(CACHE_NAME_USER).get(user.getId(), UserDO.class));
 
         // 查询 id = 1 的记录
